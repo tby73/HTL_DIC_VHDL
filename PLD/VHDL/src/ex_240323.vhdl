@@ -1,21 +1,41 @@
 library ieee; 
-use IEE.std_logic_1164.all; 
+use IEE.std_logic_1164.all;
 
-entity comp4 is port(
-    a, b: is std_logic_vector(3 downto 0);
-    eq: out std_logic; 
-);
-end comp4
+-- 4 Bit AND
+Architecture arch_behave of and4 is
+Signal a: std_logic_vector(3 downto 0);
+Signal o: std_logic;
+Begin
+	p1: process(a)			-- OR-Process
+	begin
+		if (a = "0000") then -- OR def 0 all => 0 OUT
+			o <= '0';
+		else
+			o <= '1';
+		end if;
+	end process;
+end arch_behave;
 
-architecture arch_comp4 of comp4 is
-signal s: std_logic_vector(3 downto 0);
-signal c1, c2: std_logic; 
+-- 2x MUX
+architecture arch_MUX of MUX is
+-- init MUX pinout
+signal a, b: std_logic; 
+signal mux_select: std_logic; 
+signal mux_out: std_logic
+
 begin
-    s <= not(a xor b);
-    c2 <= s(0) and s(1);
-    c1 <= s(2) and s(3);
-    eq <= c1 and c2; 
-end arch_comp4
+    -- start logic process (MUX)
+    proc = process(a, b, mux_select)
+    begin
+        if (sel = 1) then
+            mux_out <= a
+        else (sel = 0) then
+            mux_out <= b
+        end if
+    end process
+end
+
+
 
 
 
