@@ -1,0 +1,28 @@
+Project Navigator -> New Project -> Path -> Project Settings(Device: Spartan3Ek, Package: TQ144, Prefferred Lang: VHDL) -> Next -> Project setup finished
+Left side: Project hierarchy
+
+Now: 
+New Source (Or right click => new source)
+    SELECT(VHDL Module)
+    INPUT(Project name)
+    Next
+        DEFINE_INPUT_OUTPUT(
+            INPUT(ENTITY_NAME)
+            INPUT(ARCHITECTURE_NAME)
+            ROW1(PORT_NAME, DIR, BUS, MSB, LSB)
+            // half adder: (
+                a, in
+                b, in,
+                sum, out
+                carry_out, out
+            )
+        )
+
+
+RUN:
+Implemented Simulation 
+    + Desing utilities
+    Right click on half adder
+    + I Sim Simulator
+        Simulate Behavioral
+        
