@@ -29,10 +29,11 @@ begin
     -- Method 2 (SUM): conditional
     process(a, b)
     begin
-        if (a = b)
+        if (a = b) then
             sum <= 0; 
         else 
             sum <= 1; 
-        end if
-    end process
+        end if;
+    end process;
 end Behavioral;
+
