@@ -17,7 +17,7 @@ begin
     -- start MUX logic process
     process(mux_select, a, b)
     begin   
-        if (s = "1") then
+        if (mux_select = "1") then
             mux_out <= b; 
         else 
             mux_out <= a; 
